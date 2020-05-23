@@ -1,0 +1,23 @@
+@import 'src/styles-variables.scss';
+
+.masonry-container {
+  margin: 50px 30px;
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    margin: 40px 0;
+  }
+}
+
+ngx-masonry {
+  margin: 0 auto;
+}
+
+.masonry-item {
+  width: 30vw;
+  min-width: 150px;
+  max-width: 300px;
+}
+
+img {
+  width: 100%;
+  margin-bottom: 20px;
+}

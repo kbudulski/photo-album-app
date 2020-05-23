@@ -1,0 +1,58 @@
+@import 'src/styles-variables.scss';
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  min-height: calc(100vh - 64px - 40px);
+}
+
+.tile {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.welcomeTile {
+  background-image: url("src/assets/welcome-page/welcome.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 45vh;
+}
+
+.contentTile {
+  min-height: 400px;
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    min-height: calc(55vh - 64px);
+  }
+}
+
+.personalTile {
+  background-image: url("src/assets/welcome-page/personal.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.sharedTile {
+  background-image: url("src/assets/welcome-page/shared.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+a {
+  color: white;
+}
+
+h2 {
+  color: white;
+  background-color: #03a9f4;
+  padding-left: 40px;
+  padding-right: 10px;
+}
+
+.title {
+  height: 48px;
+}
+
+button {
+  font-size: 20px;
+}

@@ -1,0 +1,9 @@
+<div class="masonry-container">
+  <ngx-masonry [options]="masonryOptions">
+    <div ngxMasonryItem class="masonry-item" *ngFor="let image of images | async">
+      <a [routerLink] ="['/image', image.id]">
+      <img src="{{ image.url }}" alt="thumbnail">
+      </a>
+    </div>
+  </ngx-masonry>
+</div>

@@ -1,0 +1,55 @@
+<div class="d-flex background">
+  <div class="container">
+
+    <form [formGroup]="form">
+      <div class="row formRow justify-content-center animated fadeIn faster">
+        <div class="col-sm-8 col-md-6 col-lg-5 col-xl-4 p-0">
+          <mat-card>
+            <h2 class="text-center">
+              <span>Log in to Photo Album</span>
+            </h2>
+
+            <mat-card-content>
+
+              <div class="row">
+                <mat-form-field appearance="outline">
+                  <mat-label>Email address</mat-label>
+                  <input matInput formControlName="email">
+                  <mat-error *ngIf="form.get('email').hasError('required')">
+                    You must enter a value
+                  </mat-error>
+                  <mat-error *ngIf="form.get('email').hasError('email')">
+                    Not a valid email
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="row">
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'"
+                         formControlName="password">
+                  <mat-error *ngIf="form.get('password').hasError('required')">
+                    You must enter a value
+                  </mat-error>
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                          [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button mat-raised-button type="submit" color="accent" (click)="submit()">
+                Login
+              </button>
+            </mat-card-actions>
+            <hr style="border-top: 2px solid darkgray">
+            <p>Don't have an account yet? <a class="login-link" [routerLink]="['/auth/register']">Sign up here.</a></p>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

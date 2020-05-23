@@ -1,0 +1,24 @@
+<mat-toolbar color="accent">
+  <mat-toolbar-row>
+
+    <span class="spacer">{{ image?.name }}</span>
+
+    <div *ngIf="isOwner; else viewMode">
+    <span><button mat-button color="primary" (click)="openBottomSheet()">OPTIONS</button></span>
+    </div>
+
+    <ng-template #viewMode>
+      <span>View Mode</span>
+    </ng-template>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="d-flex background justify-content-center align-items-center">
+  <div class="column">
+    <div class="wrap">
+      <img src="{{ image?.url }}" alt="full_picture">
+    </div>
+  </div>
+
+</div>

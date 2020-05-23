@@ -1,0 +1,37 @@
+@import './app/layout/content-layout/content-layout.component.scss-theme';
+@import "./styles/themes/custom-theme";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@include mat-core();
+
+@mixin custom-components-theme($theme) {
+  @include app-component-theme($theme);
+}
+
+.default-theme {
+  @include angular-material-theme($my-app-theme);
+  @include custom-components-theme($my-app-theme);
+}
+
+* {
+  a {
+    color: cornflowerblue;
+    &:hover {
+      color: grey;
+    }
+  }
+  &:active,
+  :focus {
+    outline: none !important;
+  }
+}
+
+::ng-deep.warning-snackbar {
+  background: #03a9f4 !important;
+}
+
+::ng-deep.success-snackbar {
+  background: #8bc34a!important;
+}

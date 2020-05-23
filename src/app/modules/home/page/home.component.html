@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="tile welcomeTile d-flex justify-content-start align-items-start">
+        <h2 class="title text-center">Welcome back!</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 p-0">
+      <a [routerLink]="['/gallery']">
+        <div class="tile contentTile personalTile d-flex justify-content-center align-items-center">
+          <button mat-raised-button color="accent">Personal Board</button>
+        </div>
+      </a>
+    </div>
+    <div class="col-sm-6 p-0">
+      <a [routerLink]="['/shared']">
+        <div class="tile contentTile sharedTile d-flex justify-content-center align-items-center">
+          <button mat-raised-button color="primary">Shared Board</button>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

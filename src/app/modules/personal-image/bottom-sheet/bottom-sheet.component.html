@@ -1,0 +1,22 @@
+<mat-nav-list>
+
+  <div *ngIf="!data.shared; else hidePhoto">
+    <a mat-list-item (click)="onShareImage()">
+      <span mat-line>Share</span>
+      <span mat-line>Make Your photo public</span>
+    </a>
+  </div>
+
+  <ng-template #hidePhoto>
+    <a mat-list-item (click)="onHideImage()">
+      <span mat-line>Hide</span>
+      <span mat-line>Make Your photo private</span>
+    </a>
+  </ng-template>
+
+  <a mat-list-item (click)="onChangeImageName()">
+    <span mat-line>Change name</span>
+    <span mat-line>Change your file name</span>
+  </a>
+
+</mat-nav-list>

@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+  <p>Enter new file name:</p>
+  <mat-form-field>
+    <mat-label>File name</mat-label>
+    <input matInput [(ngModel)]="data.meta.name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="saveNameToDatabase()" [mat-dialog-close]="data.name">Ok</button>
+</div>

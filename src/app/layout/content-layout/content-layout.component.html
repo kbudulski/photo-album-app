@@ -1,0 +1,112 @@
+<mat-sidenav-container class="main-sidenav-container">
+
+  <mat-sidenav class="slider-sidenav" #sidenav mode="over">
+    <div class="branding">
+      <span> Photo Album Online </span></div>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let item of sideNavMenu" (click)="sidenav.close()" [routerLink]="[item.link]"
+         routerLinkActive="active">
+        <fa-icon icon="{{ item.icon }}"></fa-icon>
+        {{ item.title }}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <div class="wrapper">
+      <div class="toolbar">
+
+        <mat-toolbar color="primary">
+          <mat-toolbar-row>
+            <button mat-icon-button (click)="sidenav.open()">
+              <fa-icon class="sidenavicon" icon="bars"></fa-icon>
+            </button>
+
+            <span routerLink="" class="branding spacer d-inline d-sm-none"> Photo Album </span>
+            <span routerLink="" class="branding spacer d-none d-sm-inline d-md-none"> Photo Album </span>
+            <span routerLink="" class="branding spacer d-none d-md-inline"> Photo Album Online </span>
+
+            <span class="d-none d-md-inline">
+
+            <button [matMenuTriggerFor]="toolbarUserMenuUpload"
+                    mat-button class="nav-button"><fa-icon icon="cloud-upload-alt"></fa-icon>Upload
+            </button>
+            <mat-menu #toolbarUserMenuUpload="matMenu">
+
+            <button mat-menu-item>
+              <app-upload></app-upload>
+            </button>
+
+          </mat-menu>
+
+            <button mat-stroked-button *ngIf="!(user | async)?.uid" mat-button class="nav-button"
+                    [routerLink]="['/auth/login']" routerLinkActive="active">
+              Sign in</button>
+
+             <button [matMenuTriggerFor]="toolbarUserMenu" *ngIf="(user | async)?.uid" mat-button class="nav-button"><fa-icon
+               class="loginIcon" icon="user-circle"></fa-icon></button>
+                        <mat-menu #toolbarUserMenu="matMenu">
+
+            <button mat-menu-item (click)="onLogoutClick()">
+              <span>Logout</span>
+            </button>
+
+          </mat-menu>
+          </span>
+
+            <span class="d-md-none">
+            <button mat-button class="nav-button" [routerLink]="['/upload']" routerLinkActive="active"><fa-icon
+              icon="cloud-upload-alt"></fa-icon></button>
+
+            <button *ngIf="!(user | async)?.uid" mat-button class="nav-button" [routerLink]="['/auth/login']"
+                    routerLinkActive="active"><fa-icon
+              icon="sign-in-alt"></fa-icon></button>
+             <button *ngIf="(user | async)?.uid" mat-button class="nav-button" (click)="onLogoutClick()"><fa-icon
+               icon="user-circle"></fa-icon></button>
+          </span>
+
+          </mat-toolbar-row>
+
+
+        </mat-toolbar>
+      </div>
+
+      <mat-sidenav-container class="solid-sidenav">
+        <mat-sidenav class="solid-mat-sidenav" mode="side" opened>
+          <mat-nav-list>
+            <a mat-list-item *ngFor="let item of sideNavMenu" [routerLink]="[item.link]"
+               routerLinkActive="active">
+              <fa-icon icon="{{ item.icon }}"></fa-icon>
+            </a>
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+          <div *ngIf="loading; else content" class="h-100 d-flex justify-content-center align-items-center">
+            <mat-progress-spinner diameter="40"
+                                  color="accent" mode="indeterminate">
+            </mat-progress-spinner>
+          </div>
+
+          <ng-template #content>
+
+            <div id="upload-progress-bar">
+              <div *ngIf="(uploadService.uploadPercent | async) as pct">
+                <mat-progress-bar mode="determinate" [value]="pct"
+                                  color="accent">
+                </mat-progress-bar>
+              </div>
+            </div>
+
+            <div class="content">
+              <router-outlet></router-outlet>
+
+
+            </div>
+          </ng-template>
+
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
