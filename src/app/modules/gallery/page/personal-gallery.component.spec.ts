@@ -8,9 +8,9 @@ describe('PersonalGalleryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonalGalleryComponent ]
+      declarations: [PersonalGalleryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

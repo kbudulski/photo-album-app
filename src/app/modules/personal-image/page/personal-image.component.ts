@@ -38,11 +38,15 @@ export class PersonalImageComponent implements OnInit {
   getImage(id) {
     this.imageService.getImage(id).subscribe(img => {
       this.image = img[0];
-      this.isOwner = this.authService.userId === this.image.userId;
+      this.isOwner = this.authService?.userId === this.image?.userId;
     });
   }
 
   openBottomSheet() {
-    this.bottomSheet.open(BottomSheetComponent, { data: this.image});
+    this.bottomSheet.open(BottomSheetComponent, {data: this.image});
+  }
+
+  onDownload() {
+    window.open(this.image.url, 'download');
   }
 }

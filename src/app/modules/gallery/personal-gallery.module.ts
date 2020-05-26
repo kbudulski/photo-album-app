@@ -14,4 +14,5 @@ import { MaterialModule } from '../../shared/material.module';
     MaterialModule
   ]
 })
-export class PersonalGalleryModule { }
+export class PersonalGalleryModule {
+}

@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Upload } from '../../../data/schema/upload';
 import { ImageService } from '../../../core/service/image.service';
 
 @Component({
@@ -14,8 +13,6 @@ export class FileNameChangeComponent {
   }
 
   saveNameToDatabase() {
-    console.log(this.data.meta.name);
     this.imageService.changeImageName(this.data.meta.id, this.data.meta.name);
-
   }
 }

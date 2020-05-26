@@ -74,4 +74,5 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     MatBottomSheetModule
   ]
 })
-export class MaterialModule {}
+export class MaterialModule {
+}

@@ -6,7 +6,6 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { MaterialModule } from '../../shared/material.module';
 
 
-
 @NgModule({
   declarations: [SharedGalleryComponent],
   imports: [
@@ -16,4 +15,5 @@ import { MaterialModule } from '../../shared/material.module';
     MaterialModule
   ]
 })
-export class SharedGalleryModule { }
+export class SharedGalleryModule {
+}

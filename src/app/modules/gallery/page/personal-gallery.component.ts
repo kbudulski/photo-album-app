@@ -3,7 +3,6 @@ import { ImageService } from '../../../core/service/image.service';
 import { Observable } from 'rxjs';
 import { ImageModel } from '../../../data/schema/image.model';
 import { NgxMasonryOptions } from 'ngx-masonry';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-personal-gallery',

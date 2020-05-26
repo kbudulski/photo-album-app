@@ -15,7 +15,6 @@ export class UploadService {
   uploadPercent: Observable<number>;
   snapshot: Observable<any>;
   generatedUrl: string;
-  isLoading: boolean;
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) {
   }

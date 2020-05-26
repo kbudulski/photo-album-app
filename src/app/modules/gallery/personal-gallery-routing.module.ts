@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PersonalGalleryComponent } from './page/personal-gallery.component';
 
 const routes: Routes = [
@@ -13,4 +13,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PersonalGalleryRoutingModule {}
+export class PersonalGalleryRoutingModule {
+}

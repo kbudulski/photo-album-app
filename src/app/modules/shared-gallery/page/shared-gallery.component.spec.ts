@@ -8,9 +8,9 @@ describe('SharedGalleryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SharedGalleryComponent ]
+      declarations: [SharedGalleryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

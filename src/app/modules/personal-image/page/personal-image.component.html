@@ -4,8 +4,11 @@
     <span class="spacer">{{ image?.name }}</span>
 
     <div *ngIf="isOwner; else viewMode">
-    <span><button mat-button color="primary" (click)="openBottomSheet()">OPTIONS</button></span>
+      <span><button mat-button color="primary" (click)="openBottomSheet()">OPTIONS</button></span>
     </div>
+
+    <span><button mat-button color="primary" (click)="onDownload()">DOWNLOAD</button></span>
+
 
     <ng-template #viewMode>
       <span>View Mode</span>

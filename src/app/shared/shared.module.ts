@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faBars,
+  faCloudUploadAlt,
+  faHome,
+  faImage,
   faSignInAlt,
   faSignOutAlt,
   faUpload,
-  faHome,
-  faImage,
   faUserCircle,
-  faCloudUploadAlt,
   faUserFriends
 } from '@fortawesome/free-solid-svg-icons';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';

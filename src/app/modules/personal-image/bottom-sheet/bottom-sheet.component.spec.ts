@@ -8,9 +8,9 @@ describe('BottomSheetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BottomSheetComponent ]
+      declarations: [BottomSheetComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

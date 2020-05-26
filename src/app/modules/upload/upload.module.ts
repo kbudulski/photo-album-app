@@ -15,4 +15,5 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatProgressBarModule
   ]
 })
-export class UploadModule { }
+export class UploadModule {
+}

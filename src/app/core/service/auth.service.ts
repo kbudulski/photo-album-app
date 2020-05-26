@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app';
 import { auth } from 'firebase/app';
 import { Observable } from 'rxjs';
-import * as firebase from 'firebase/app';
 import { UserModel } from '../../data/schema/user.model';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -45,7 +45,6 @@ export class AuthService {
         localStorage.removeItem('uid');
       }
     });
-
   }
 
   loginGoogle() {

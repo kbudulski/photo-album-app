@@ -19,7 +19,8 @@ export class SharedGalleryComponent implements OnInit {
     fitWidth: true,
   };
 
-  constructor(private imageService: ImageService) { }
+  constructor(private imageService: ImageService) {
+  }
 
   ngOnInit(): void {
     this.images = this.imageService.getSharedImages();

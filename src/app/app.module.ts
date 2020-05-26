@@ -27,4 +27,5 @@ import { UploadModule } from './modules/upload/upload.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

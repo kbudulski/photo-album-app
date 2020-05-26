@@ -19,4 +19,14 @@
     <span mat-line>Change your file name</span>
   </a>
 
+  <a mat-list-item (click)="onDeleteImage()">
+    <span mat-line>Delete</span>
+    <span mat-line>Delete this photo</span>
+  </a>
+
+  <a mat-list-item (click)="onReport(data)">
+    <span mat-line>Metadata</span>
+    <span mat-line>Get report with metadata</span>
+  </a>
+
 </mat-nav-list>

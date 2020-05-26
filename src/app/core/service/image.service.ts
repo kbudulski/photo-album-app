@@ -1,9 +1,11 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ImageModel } from '../../data/schema/image.model';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Upload } from '../../data/schema/upload';
 import { AuthService } from './auth.service';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +13,11 @@ import { AuthService } from './auth.service';
 export class ImageService {
   uploadsCol: AngularFirestoreCollection<ImageModel>;
   uploads: Observable<ImageModel[]>;
-  uploadDoc: AngularFirestoreDocument<ImageModel>;
   upload: Observable<ImageModel>;
   userIdLocal = localStorage.getItem('uid');
 
-  constructor(private db: AngularFirestore, private authService: AuthService) {
+  constructor(private db: AngularFirestore, private storage: AngularFireStorage,
+              private authService: AuthService, private router: Router) {
   }
 
   getImages(): Observable<ImageModel[]> {
@@ -50,9 +52,13 @@ export class ImageService {
   }
 
   changeImageName(id: string, name: string) {
-    console.log('w service');
-    console.log(name);
     this.db.collection('uploads')
       .doc(id).update({name});
+  }
+
+  deleteImage(id: string, url: string) {
+    this.db.collection('uploads').doc(id).delete();
+    this.storage.storage.refFromURL(url).delete();
+    this.router.navigate(['gallery']);
   }
 }
